@@ -1,0 +1,52 @@
+{
+    "dataset_config": {
+        "data_batch": "Batch_1",
+        "dex_type": "DEXA",
+        "code_to_label": {
+            "POINT NOT COVERED BY POLYGON": 0,
+            "LAND": 1,
+            "OW": 2,
+            "BW": 2,
+            "IF": 2,
+            "ICEGLACE": null,
+            "FAST": null,
+            "1": 3,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3,
+            "6": 4,
+            "7": 4,
+            "8": 4,
+            "9": 4,
+            "10": 4,
+            "40": 4,
+            "70": 5,
+            "80": 5,
+            "90": 5
+        },
+        "label_names": {
+            "0": "POINT NOT COVERED BY POLYGON",
+            "1": "LAND",
+            "2": "OW/BW/IF",
+            "3": "New ice",
+            "4": "First-year ice",
+            "5": "Old ice"
+        },
+        "pol": [
+            "HH",
+            "HV"
+        ],
+        "Ct": 0,
+        "pre_processing": "raw"
+    },
+    "model_config": {
+        "model": "unet_half",
+        "loss": "categorical_crossentropy",
+        "metric": "accuracy",
+        "batch_size": 100,
+        "epochs": 100,
+        "early_stopping_patience": 8,
+        "reduce_lr_patience": 4
+    }
+}

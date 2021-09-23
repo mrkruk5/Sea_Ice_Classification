@@ -1,0 +1,63 @@
+{
+    "dataset_config": {
+        "data_batch": "Batch_2",
+        "dex_type": "DEXA",
+        "code_to_label": {
+            "POINT NOT COVERED BY POLYGON": null,
+            "LAND": null,
+            "OW": 0,
+            "BW": 0,
+            "IF": 0,
+            "ICEGLACE": null,
+            "FAST": null,
+            "1": 1,
+            "2": 2,
+            "3": 3,
+            "4": 4,
+            "5": 5,
+            "6": 6,
+            "7": 7,
+            "8": 8,
+            "9": 9,
+            "10": 10,
+            "40": 11,
+            "70": 12,
+            "80": 13,
+            "90": 14
+        },
+        "label_names": {
+            "0": "OW/BW/IF",
+            "1": "New ice",
+            "2": "Nilas",
+            "3": "Young ice",
+            "4": "Grey ice",
+            "5": "Grey-white ice",
+            "6": "First-year ice",
+            "7": "Thin first-year ice",
+            "8": "First stage thin first-year ice",
+            "9": "Second stage thin first-year ice",
+            "10": "Medium first-year ice",
+            "11": "Thick first-year ice",
+            "12": "Old ice",
+            "13": "Second-year ice",
+            "14": "Multi-year ice"
+        },
+        "pol": [
+                "HH",
+                "HV",
+                "HH_DIV_HV",
+                "HV_DIV_HH"
+            ],
+        "Ct": 0,
+        "pre_processing": "cal+denoise"
+    },
+    "model_config": {
+        "model": "unet_half",
+        "loss": "categorical_crossentropy",
+        "metric": ["accuracy"],
+        "batch_size": 1000,
+        "epochs": 100,
+        "early_stopping_patience": 8,
+        "reduce_lr_patience": 4
+    }
+}
